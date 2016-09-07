@@ -2,6 +2,10 @@
 /* global $: true */
 "use strict";
 
+var postcss = require( "gulp-postcss" );
+var lost = require( "lost" );
+var autoprefixer = require( "autoprefixer" );
+var sass = require( "gulp-sass" );
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
 	$ = require( "gulp-load-plugins" )(),
@@ -72,14 +76,13 @@ gulp.task( "copy", function() {
 
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
+    var processors = [
+        lost,
+        autoprefixer({browsers:['last 2 versions']})
+    ];
 	return gulp.src( "src/css/sass/style.scss" )
-		.pipe( $.rubySass({
-			style: "expanded",
-			precision: 10
-		}))
-		.on( "error", function( e ) {
-			console.error( e );
-		})
+        .pipe(sass().on('error',sass.logError))
+        .pipe(postcss(processors))
 		.pipe( gulp.dest( "src/css" ) );
 });
 
