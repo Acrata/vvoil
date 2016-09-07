@@ -26,11 +26,11 @@ header {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  background-color: #D82828;
+  background-color: #f24333;
 }
 
 nav.menur {
-  background-color: #D82828;
+  background-color: #f24333;
   overflow: visible;
   height: 100vh;
   width: 262px;
@@ -44,11 +44,11 @@ nav.menur {
   height: 100%;
   transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
   transform: translateX(0%);
-  background-color: #D82828;
+  background-color: #f24333;
 }
 
 .is-open {
-    background-color: red;
+    background-color: #ba1b1d;
   transform: translateX(-262px);
   transition: all 0.7s cubic-bezier(0.52, 0.55, 0.55, 1);
 }
