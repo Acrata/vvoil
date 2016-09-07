@@ -720,3 +720,6 @@ body.pg-loaded > .wrapper {
   background-color: blue;
   position: absolute;
   top: 0; }
+
+.page #wds_container1_0 {
+  display: none; }

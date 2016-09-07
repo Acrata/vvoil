@@ -74,4 +74,4 @@
             <slide></slide>
 			</header>
 			<!-- /header -->
-
+<?php wd_slider(1); ?>

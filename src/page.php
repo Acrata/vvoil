@@ -10,7 +10,10 @@
 
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+            <?php
+$imagen = get_posts( array( 'post_type' => 'attachment' ) );
+wp_get_attachment_image( $imagen);
+?>
 				<?php the_content(); ?>
 
 				<?php comments_template( '', true ); // Remove if you don't want comments ?>
