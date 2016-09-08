@@ -8,6 +8,7 @@
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
+            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -40,6 +41,6 @@
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>

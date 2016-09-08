@@ -24,8 +24,35 @@
 @import "partials/print";
 
 body {
-    background-color:maroon;
-    transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
+ background: linear-gradient(258deg, #f51133, #f5343a, #ff0f17);
+background-size: 600% 600%;
+
+-webkit-animation: AnimationName 9s ease infinite;
+-moz-animation: AnimationName 9s ease infinite;
+-o-animation: AnimationName 9s ease infinite;
+animation: AnimationName 9s ease infinite;
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:72% 0%}
+    50%{background-position:29% 100%}
+    100%{background-position:72% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:72% 0%}
+    50%{background-position:29% 100%}
+    100%{background-position:72% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:72% 0%}
+    50%{background-position:29% 100%}
+    100%{background-position:72% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:72% 0%}
+    50%{background-position:29% 100%}
+    100%{background-position:72% 0%}
+}
+    font-family: 'Raleway', sans-serif;
 }
 
 .lide-img {
@@ -127,3 +154,37 @@ body.pg-loaded > .wrapper {
      top:0;
 }
 
+.page main  {
+    background-color: #FFF;
+}
+
+.page h1 {
+     margin:0px;
+     padding:7px;
+     color:#424242;
+     font-size:1.6em;
+}
+
+.frm-show-form .frm_form_fields  fieldset {
+     width:85%;
+     margin:auto;
+}
+
+@media only screen 
+  and (min-device-width: 814px) 
+  and (max-device-width: 936px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  { 
+
+.page .attachment-post-thumbnail {
+    lost-column:3/6 2px;
+    padding:8px;
+    margin-right:0px !important;
+}
+
+.frm-show-form .frm_form_fields  fieldset {
+    lost-column:3/6 2px;
+    padding:12px;
+    background-color: #F00;
+}
+}

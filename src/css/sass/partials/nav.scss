@@ -5,7 +5,16 @@
  */
 
 
-.nav {}
+.nav {
+
+    ul {
+
+        li {
+            font-weight:600;
+            text-transform: uppercase;
+        }
+    }
+}
 
 .menu {}
 

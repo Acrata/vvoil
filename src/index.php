@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+        <?php wd_slider(1); ?>
 	<main role="main">
 		<!-- section -->
 		<section>

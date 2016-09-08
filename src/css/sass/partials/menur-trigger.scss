@@ -12,6 +12,7 @@
   text-indent: 100%;
   color: transparent;
   white-space: nowrap;
+  transform: scale(.7);
   z-index:22;
 }
 
@@ -57,6 +58,11 @@
 .fleche .trigger:hover span::after {
   transform: rotate(45deg);
   transform: translate(-2px, -5px) rotate(45deg);
+  width: 50%;
+}
+.is-open + .fleche .trigger {
+  transform: rotate(90deg);
+  transform: translate(-2px, -5px) rotate(90deg);
   width: 50%;
 }
 
