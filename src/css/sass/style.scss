@@ -55,6 +55,15 @@ animation: AnimationName 9s ease infinite;
     font-family: 'Raleway', sans-serif;
 }
 
+
+h1, h2, h3 { 
+    color: #282828;
+    font-size:1em;
+    margin: 0;
+    text-align: center;
+    text-transform:uppercase;
+}
+
 .lide-img {
     width: 100vw;
     padding:0px;
@@ -174,17 +183,26 @@ body.pg-loaded > .wrapper {
   and (min-device-width: 814px) 
   and (max-device-width: 936px) 
   and (-webkit-min-device-pixel-ratio: 3)
-  { 
+  { }
 
 .page .attachment-post-thumbnail {
-    lost-column:3/6 2px;
+    lost-column:6/6 2px;
     padding:8px;
     margin-right:0px !important;
 }
 
 .frm-show-form .frm_form_fields  fieldset {
-    lost-column:3/6 2px;
+    //lost-column:5/6 2px;
+    width:100%;
+    margin:auto;
     padding:12px;
-    background-color: #F00;
+    background-color: #FFF;
 }
+
+.form-vv {
+    //lost-align:center;
+}
+
+article.page p {
+     color:#424242;
 }

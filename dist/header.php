@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
  <link href="https://fonts.googleapis.com/css?family=Secular+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
 <!--CDN link for  TweenMax-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script src="https://use.fontawesome.com/015185764a.js"></script>
@@ -74,6 +74,6 @@
             <div ng-view></div>
             <slide></slide>
 <?php // outputs a list of languages names ?>
-<ul><?php pll_the_languages(); ?></ul>
+<ul class="lang-swicher"><?php pll_the_languages(); ?></ul>
 			</header>
 			<!-- /header -->

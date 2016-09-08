@@ -198,11 +198,6 @@ body {
   color: #353d46;
   font: 18px/27px 'Oxygen', sans-serif; }
 
-h1, h2, h3 {
-  color: #FFFF6B;
-  margin: 0 0 27px;
-  text-transform: uppercase; }
-
 /*
   Menu
 */
@@ -559,6 +554,13 @@ body {
   100% {
     background-position: 72% 0%; } }
 
+h1, h2, h3 {
+  color: #282828;
+  font-size: 1em;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase; }
+
 .lide-img {
   width: 100vw;
   padding: 0px; }
@@ -649,34 +651,31 @@ body.pg-loaded > .wrapper {
   width: 85%;
   margin: auto; }
 
-@media only screen and (min-device-width: 814px) and (max-device-width: 936px) and (-webkit-min-device-pixel-ratio: 3) {
-  .page .attachment-post-thumbnail {
-    width: calc(99.9% * 3/6 - (30px - 30px * 3/6));
-    padding: 8px;
-    margin-right: 0px !important; }
-  .page .attachment-post-thumbnail:nth-child(1n){
-    float: left;
-    margin-right: 30px;
-    clear: none; }
-  .page .attachment-post-thumbnail:last-child{
-    margin-right: 0; }
-  .page .attachment-post-thumbnail:nth-child(2pxn){
-    margin-right: 0;
-    float: right; }
-  .page .attachment-post-thumbnail:nth-child(2pxn + 1){
-    clear: both; }
-  .frm-show-form .frm_form_fields fieldset {
-    width: calc(99.9% * 3/6 - (30px - 30px * 3/6));
-    padding: 12px;
-    background-color: #F00; }
-  .frm-show-form .frm_form_fields fieldset:nth-child(1n){
-    float: left;
-    margin-right: 30px;
-    clear: none; }
-  .frm-show-form .frm_form_fields fieldset:last-child{
-    margin-right: 0; }
-  .frm-show-form .frm_form_fields fieldset:nth-child(2pxn){
-    margin-right: 0;
-    float: right; }
-  .frm-show-form .frm_form_fields fieldset:nth-child(2pxn + 1){
-    clear: both; } }
+.page .attachment-post-thumbnail {
+  width: calc(99.9% * 6/6 - (30px - 30px * 6/6));
+  padding: 8px;
+  margin-right: 0px !important; }
+
+.page .attachment-post-thumbnail:nth-child(1n){
+  float: left;
+  margin-right: 30px;
+  clear: none; }
+
+.page .attachment-post-thumbnail:last-child{
+  margin-right: 0; }
+
+.page .attachment-post-thumbnail:nth-child(2pxn){
+  margin-right: 0;
+  float: right; }
+
+.page .attachment-post-thumbnail:nth-child(2pxn + 1){
+  clear: both; }
+
+.frm-show-form .frm_form_fields fieldset {
+  width: 100%;
+  margin: auto;
+  padding: 12px;
+  background-color: #FFF; }
+
+article.page p {
+  color: #424242; }
