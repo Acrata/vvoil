@@ -23,8 +23,70 @@
 @import "partials/footer";
 @import "partials/print";
 
+@media only screen and (min-width:700px) {
+    article.page {
+    }
+    .content-voil > * {
+    }
+    .content-voil {
+        /*position:absolute;*/
+        /*top:8px;*/
+        /*right:0px;*/
+        /*lost-utility:edit;*/
+        /*width:45%;*/
+        float:right !important;
+        lost-column:4/8;
+        lost-move:4/8;
+        /*position:absolute;*/
+        /*top:1px;*/
+    }
+    p ~ .content-voil {
+    }
+    h1.title-voil {
+
+    }
+    section img.attachment-post-thumbnail {
+         lost-column:4/8 1;
+         lost-move:-4/8;
+        padding-top:8px !important;
+    }
+    /*section h1 {*/
+        /*lost-column:3/6 1;*/
+        /*text-align:left;*/
+
+        /*font-size:4em !important;*/
+        /*padding:35px 0px 15px !important;*/
+    /*}*/
+    .frm-show-form .frm_form_fields  fieldset {
+    width:45% !important;
+    }
+    .titles-voil {
+  /*position: absolute;*/
+  /*width: 43vw !important;*/
+  lost-column:4/8;
+  lost-move:3.5/8;
+  border-left: 8px solid #5f5555;
+  padding-top:8px !important;
+}
+    }
+    @media only screen and (min-width:900px) {
+    .titles-voil {
+  /*position: absolute;*/
+  /*width: 43vw !important;*/
+  lost-column:4/8;
+  lost-move:4.5/8;
+  border-left: 8px solid #5f5555;
+  padding-top:8px !important;
+}
+         
+    }
 body {
- background: linear-gradient(258deg, #f51133, #f5343a, #ff0f17);
+    font-family: 'Raleway', sans-serif;
+    height:100%;
+}
+nav {
+
+    background: linear-gradient(258deg, #ff5555, #fb2a2a, #ff5555);
 background-size: 600% 600%;
 
 -webkit-animation: AnimationName 9s ease infinite;
@@ -52,9 +114,11 @@ animation: AnimationName 9s ease infinite;
     50%{background-position:29% 100%}
     100%{background-position:72% 0%}
 }
-    font-family: 'Raleway', sans-serif;
 }
-
+html{
+    height:100%;
+     
+}
 
 ul li {
   list-style: none;
@@ -77,16 +141,15 @@ h3 {
 }
 
 header {
-  display: flex;
+  display: none;
   align-items: center;
   margin-bottom: 12px;
 }
 
 h1, h2, h3 { 
     color: #282828;
-    font-size:1em;
     margin: 0;
-    text-align: center;
+    /*text-align: center;*/
     text-transform:uppercase;
 }
 
@@ -196,8 +259,7 @@ body.pg-loaded > .wrapper {
 .page h1 {
      margin:0px;
      padding:7px;
-     color:#424242;
-     font-size:1.6em;
+     /*font-size:1.6em;*/
 }
 
 .frm-show-form .frm_form_fields  fieldset {
@@ -206,7 +268,7 @@ body.pg-loaded > .wrapper {
 }
 
 .page .attachment-post-thumbnail {
-    lost-column:6/6 2px;
+    /*lost-column:6/6 ;*/
     padding:0px 8px;
     margin-right:0px !important;
 }
@@ -224,8 +286,9 @@ body.pg-loaded > .wrapper {
 }
 
 article.page p {
-     color:#424242;
      margin:0px;
+     padding-top:8px;
+     float:right;
      span {
         font-weight: 400;
         letter-spacing: 0.2px;
@@ -246,30 +309,61 @@ q, blockquote {
   };
 }
 
-@media  (min-width:700px) {
+  @media  (max-width:1200px) {
     article.page {
         /*background-color: rgba(233,233,33,.5);*/
     }
-    section img.attachment-post-thumbnail {
-         lost-column:3/6 !important;
-        padding-top:8px !important;
-    }
     section h1 {
-        lost-column:3/6 1;
-        text-align:left;
+    }
+}
 
-        font-size:3em !important;
-        padding:35px 0px 15px !important;
-    }
-    .frm-show-form .frm_form_fields  fieldset {
-    width:45% !important;
-    }
-    }
-  @media  (max-width:1200px) {
-    article.page {
-        background-color: rgba(233,233,33,.5);
-    }
-    section h1 {
-        font-size:.8em !important;
-    }
+main[role="main"] {
+}
+article {
+  lost-aign:right;
+  height:auto;
+}
+
+.titles-voil {
+  /*background-color: rgba(255, 85, 85, 1);*/
+  /*position: absolute;*/
+  /*lost-column:6/6;*/
+  max-height:13%;
+  right: 0px;
+  border-left: 8px solid rgba(233, 236, 236, 1);
+  float: right !important;
+  margin:4px 8px !important;
+  clear:left;
+  overflow:hidden;
+}
+.titles-voil p{
+    margin:0px;
+}
+
+h1.title-voil, .titles-voil span  {
+    padding:0px;
+    margin:0px;
+    position:relative;
+    top:0px;
+    right:0px;
+}
+h1.title-voil {
+     padding:5px;
+     line-height:6vh;
+}
+ .titles-voil span{
+    text-align: right;
+}
+
+.show-title-voil {
+     font-weight:500;
+     letter-spacing:.4px;
+     font-family: Qanelas-MediumItalic;
+}
+
+footer {
+    lost-column:3/3;
+}
+.post-edit-link {
+    clear:left !important;
 }
