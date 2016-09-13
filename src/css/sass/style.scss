@@ -16,12 +16,14 @@
 @import "partials/wrapper";
 @import "partials/header";
 @import "partials/nav";
+@import "partials/prel";
 @import "partials/menur";
 @import "partials/menur-trigger";
 @import "partials/preload";
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
+
 
 @media only screen and (min-width:700px) {
     article.page {
@@ -74,7 +76,7 @@
   /*position: absolute;*/
   /*width: 43vw !important;*/
   lost-column:4/8;
-  lost-move:4.5/8;
+  lost-move:3.6/8;
   border-left: 8px solid #5f5555;
   padding-top:8px !important;
 }
@@ -147,7 +149,6 @@ header {
 }
 
 h1, h2, h3 { 
-    color: #282828;
     margin: 0;
     /*text-align: center;*/
     text-transform:uppercase;
@@ -303,7 +304,6 @@ q, blockquote {
   color: #fff;
   font-style: italic;
   @include pull-quote($offset: -0.2em -0.6em){
-    font-size: 3em;
     color: rgba(#fff, 0.7);
     font-family: 'Times New Roman';
   };
@@ -366,4 +366,8 @@ footer {
 }
 .post-edit-link {
     clear:left !important;
+}
+.prel {
+     background-color:#ff5555;
+     height:100vh;
 }

@@ -31,6 +31,14 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+        <div class="prel">
+            <img class="prel-img" src="<?php echo get_template_directory_uri(); ?>/img/logo-web.svg" alt="Logo" class="logo-img">
+        <div class='preload-juggle'>
+          <div class='ball'></div>
+          <div class='ball'></div>
+          <div class='ball'></div>
+        </div>
+</div>
 		<!-- wrapper -->
 		<div class="wrapper lide" id="wrapper">
                 <div class="fleche" id="trigger">

@@ -25,6 +25,20 @@
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
 		</script>
+<script type="text/javascript">
+      //var loading_screen = pleaseWait({
+        //logo: "",
+        //backgroundColor: '#f46d3b',
+        //loadingHtml: "<p class='loading-message'>Preloooooooad!</p>"
+      //});
+
+            //loading_screen.finish();
+        $('html').load(function(){
+            console.log("ral");
+            loading_screen.finish();
+      });
+    </script>
+<script>$(window).load(function(){$(".prel").fadeOut();$(".preloader").delay(150).fadeOut("slow");})</script>
 
 	</body>
 </html>
