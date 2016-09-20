@@ -5,6 +5,9 @@
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
             <?php $pllid =  pll_get_post($post->ID)?>
             <?php $invo = get_post_meta($pllid,'show_title_voil',true)?>
+            <?php $dur_art_voil = get_post_meta($pllid,'duration_data_voil',true)?>
+            <?php $public_art_voil = get_post_meta($pllid,'public_data_voil',true)?>
+            <?php $from_art_voil = get_post_meta($pllid,'from_data_voil',true)?>
 
             <?php the_post_thumbnail(); // Fullsize image for the single post ?>
 			<!-- article -->
@@ -22,7 +25,13 @@
 				<br class="clear">
 <div class="content-voil">
 				<?php the_content(); ?>
+            <div class="art-info-voil">
+                    <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $dur_art_voil; ?></span>
+                    <span><?php echo $public_art_voil; ?></span>
+                    <span><?php echo $from_art_voil; ?></span>
+            </div>
 </div>
+                    <?php //echo get_post_meta(118,'duration_data',true)?>
 				<?php //comments_template( '', true ); // Remove if you don't want comments ?>
 
 				<br class="clear">

@@ -582,3 +582,36 @@ function my_add_show_title() {
 }
 /* }}} */
 add_action('edit_form_after_title', 'my_add_show_title');
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+// check if polylang exist & enabled
+if ( is_plugin_active( 'polylang/polylang.php' ) ) {
+    //plugin is activated
+    add_filter('pll_the_languages', 'lang_sel_voil', 10, 2);
+    /* public lang_sel_voil($output, $args) {{{ */
+    /**selector de lenguaje personalizado
+     * lang_sel_voil
+     *
+     * @param mixed $output
+     * @param mixed $args
+     * @access public
+     * @return void
+     */
+    function lang_sel_voil($output, $args) {
+        $translations = pll_the_languages(array('raw'=>1));
+        $output = '';
+        $output .= '<div class="btn-group" role="group">
+    <ul class="lang-menu">';
+
+        foreach ($translations as $key => $value) {
+            $output .= '<li><a class="button" href="'.$value['url'].'"> ' .$value['slug'].'</a></li>';
+            //$output .= '<li><a class="lang-item-slug" href="'.$value['url'].'"> ' .$value['slug'].'</a></li>';
+            //$output .= '<li><a class="lang-item-slug" href="'.$value['url'].'"><img src="'.$value['flag'].'" alt="'.$value['slug'].'"> ' .$value['slug'].'</a></li>';
+        }
+
+        $output .= '</ul></div>';
+        return $output;
+    }
+    /* }}} */
+}

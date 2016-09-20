@@ -65,6 +65,7 @@ gulp.task( "copy", function() {
 	return gulp.src([
 			"src/*.{php,png,css}",
 			"src/modules/*.php",
+			"src/piklist/**/*.php",
 			"src/img/**/*.{jpg,png,svg,gif,webp,ico}",
 			"src/fonts/*.{woff,woff2,ttf,otf,eot,svg}",
 			"src/languages/*.{po,mo,pot}"
@@ -78,7 +79,7 @@ gulp.task( "copy", function() {
 gulp.task( "sass", function () {
     var processors = [
         lost,
-        autoprefixer({browsers:['last 2 versions']})
+        autoprefixer({browsers:['last 3 versions']})
     ];
 	return gulp.src( "src/css/sass/style.scss" )
         .pipe(sass().on('error',sass.logError))
