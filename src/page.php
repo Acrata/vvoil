@@ -24,7 +24,19 @@
 
 				<br class="clear">
 <div class="content-voil">
+<div class="tlab-voil">
+<input  class="inp-voil"id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1" class="lab-voil">Codepen</label>
+
+  <input class="inp-voil" id="tab2" type="radio" name="tabs">
+<label for="tab2" class="lab-voil">Dribbble</label>
+</div>
+            <section class="tab-voil" id="content1">
 				<?php the_content(); ?>
+            </section>
+            <section class="tab-voil" id="content2">aa
+				<?php the_content(); ?>
+            </section>
             <div class="art-info-voil">
                     <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $dur_art_voil; ?></span>
                     <span><?php echo $public_art_voil; ?></span>

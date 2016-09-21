@@ -1,5 +1,6 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logo-web.svg" alt="Logo" class="footer-logo-img">
 <ul class="social">
                                   <li class="facebook"><i class="fa fa-facebook"></i></a></li>
                                   <li class="twitter"><i class="fa fa-twitter"></i></a></li>

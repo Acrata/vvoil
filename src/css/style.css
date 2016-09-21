@@ -242,7 +242,7 @@ input[type="search"] {
   vertical-align: middle;
   position: relative;
   z-index: 10;
-  color: #333; }
+  color: #323232; }
 
 .button:hover {
   color: #fff; }
@@ -265,9 +265,9 @@ input[type="search"] {
   opacity: 1\9;
   visibility: visible\9;
   display: none\9;
-  -ms-transform: scale(0.5, 0.5);
-  -webkit-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
   z-index: -1;
   transition: all 0.2s ease; }
 
@@ -407,6 +407,75 @@ body.menu-active div#content {
 
 body.menu-active div#content .menu-trigger {
   left: 294px; }
+
+section.tab-voil {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd; }
+
+input.inp-voil {
+  display: none; }
+
+label.lab-voil {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  width: 12vw;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent; }
+
+label.lab-voil:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px; }
+
+label.lab-voil[for*='1']:before {
+  content: '\f1cb'; }
+
+label.lab-voil[for*='2']:before {
+  content: '\f17d'; }
+
+label.lab-voil[for*='3']:before {
+  content: '\f16b'; }
+
+label.lab-voil[for*='4']:before {
+  content: '\f1a9'; }
+
+label.lab-voil:hover {
+  color: #888;
+  cursor: pointer; }
+
+.tlab-voil input.inp-voil:checked + label.lab-voil {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid #ff5555;
+  border-bottom: 1px solid #fff; }
+
+.tlab-voil #tab1:checked ~ #content1,
+.tlab-voil #tab2:checked ~ #content2,
+.tlab-voil #tab3:checked ~ #content3,
+.tlab-voil #tab4:checked ~ #content4 {
+  display: block; }
+
+@media screen and (max-width: 650px) {
+  label.lab-voil {
+    font-size: 0; }
+  label.lab-voil:before {
+    margin: 0;
+    font-size: 18px; } }
+
+@media screen and (max-width: 400px) {
+  label.lab-voil {
+    padding: 15px; } }
+
+.tlab-voil {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff; }
 
 .prel {
   background: linear-gradient(270deg, #ff5555, #ff8282);
@@ -725,7 +794,7 @@ nav.menur {
  * ---
  */
 .footer {
-  height: 33vh;
+  height: 23vh;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5555+0,ff3535+100 */
   background: #ff5555;
   /* Old browsers */
@@ -735,6 +804,12 @@ nav.menur {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5555', endColorstr='#ff3535',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
+
+.footer .footer-logo-img {
+  width: 150px;
+  left: 12px;
+  border-left: 6px solid #FFF;
+  padding: 0px 6px; }
 
 /**
  * partials/print
@@ -809,17 +884,21 @@ nav.menur {
     position: relative;
     left: calc(99.9% * -4/8 - (30px - 30px * -4/8) + 30px);
     padding-top: 8px !important;
-    float: left !important; }
+    /*float:left !important;*/ }
   section img.attachment-post-thumbnail:nth-child(1n){
+    /*float:left !important;*/
     float: left;
     margin-right: 30px;
     clear: none; }
   section img.attachment-post-thumbnail:last-child{
+    /*float:left !important;*/
     margin-right: 0; }
   section img.attachment-post-thumbnail:nth-child(1n){
+    /*float:left !important;*/
     margin-right: 0;
     float: right; }
   section img.attachment-post-thumbnail:nth-child(1n + 1){
+    /*float:left !important;*/
     clear: both; }
   /*section h1 {*/
   /*lost-column:3/6 1;*/
@@ -1247,29 +1326,18 @@ h1.title-voil {
 
 footer {
   background-color: #ff5555;
-  width: calc(99.9% * 3/3 - (30px - 30px * 3/3));
+  /*lost-column:3/3;*/
+  width: 100vw;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-flow: row-reverse nowrap;
       -ms-flex-flow: row-reverse nowrap;
           flex-flow: row-reverse nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 36vh; }
-
-footer:nth-child(1n){
-  float: left;
-  margin-right: 30px;
-  clear: none; }
-
-footer:last-child{
-  margin-right: 0; }
-
-footer:nth-child(3n){
-  margin-right: 0;
-  float: right; }
-
-footer:nth-child(3n + 1){
-  clear: both; }
 
 footer .social {
   display: -webkit-flex;
@@ -1277,9 +1345,15 @@ footer .social {
   display: flex;
   -webkit-flex-flow: row;
       -ms-flex-flow: row;
-          flex-flow: row; }
+          flex-flow: row;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
   footer .social li i {
-    padding: 12px;
+    padding: 0px 12px;
     color: #FFF; }
 
 .post-edit-link {

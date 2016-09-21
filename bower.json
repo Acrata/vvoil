@@ -1,7 +1,7 @@
 {
-  "name": "HTML5Blank",
+  "name": "voilart",
   "version": "1.5.0",
-  "author": "Todd Motto",
+  "author": "Hector O",
   "devDependencies": {
     "jquery": "~1.11.1",
     "modernizr": "~2.8.3",

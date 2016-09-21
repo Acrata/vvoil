@@ -17,6 +17,7 @@
 @import "partials/header";
 @import "partials/lang";
 @import "partials/nav";
+@import "partials/tab";
 @import "partials/prel";
 @import "partials/menur";
 @import "partials/menur-trigger";
@@ -46,7 +47,7 @@
          lost-column:4/8 1;
          lost-move:-4/8;
         padding-top:8px !important;
-        float:left !important;
+        /*float:left !important;*/
     }
     /*section h1 {*/
         /*lost-column:3/6 1;*/
@@ -428,17 +429,21 @@ h1.title-voil {
 
 footer {
     background-color:#ff5555;
-    lost-column:3/3;
+    /*lost-column:3/3;*/
+    width:100vw;
     display:flex;
     flex-flow:row-reverse nowrap;
+    align-items:center;
     height:36vh;
 }
 
 footer .social {
      display:flex;
      flex-flow:row;
+     justify-content:flex-end;
+     align-items:center;
      li i {
-         padding:12px;
+         padding: 0px 12px;
          color:#FFF;
      }
 }
