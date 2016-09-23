@@ -42,8 +42,8 @@
 		<!-- wrapper -->
 		<div class="wrapper lide" id="wrapper">
 
-            <?php pll_the_languages();?>
                 <div class="fleche" id="trigger">
+            <?php pll_the_languages();?>
                   <p class="trigger" >
                     Menu <span></span>
                   </p>
