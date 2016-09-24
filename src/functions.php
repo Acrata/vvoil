@@ -601,10 +601,10 @@ if ( is_plugin_active( 'polylang/polylang.php' ) ) {
     function lang_sel_voil($output, $args) {
         $translations = pll_the_languages(array('raw'=>1));
         $output = '';
-        $output .= '<div class="btn-group" role="group">
-    <ul class="lang-menu">';
+        $output .= '<div class="lang-btn-group" role="group">
+            <ul class="lang-menu">';
 
-        foreach ($translations as $key => $value) {
+            foreach ($translations as $key => $value) {
             $output .= '<li><a class="button" href="'.$value['url'].'"> ' .$value['slug'].'</a></li>';
             //$output .= '<li><a class="lang-item-slug" href="'.$value['url'].'"> ' .$value['slug'].'</a></li>';
             //$output .= '<li><a class="lang-item-slug" href="'.$value['url'].'"><img src="'.$value['flag'].'" alt="'.$value['slug'].'"> ' .$value['slug'].'</a></li>';

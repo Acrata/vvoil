@@ -8,6 +8,8 @@
             <?php $dur_art_voil = get_post_meta($pllid,'duration_data_voil',true)?>
             <?php $public_art_voil = get_post_meta($pllid,'public_data_voil',true)?>
             <?php $from_art_voil = get_post_meta($pllid,'from_data_voil',true)?>
+            <?php $calle_voil = get_post_meta($pllid,'calle_voil',true)?>
+            <?php $palco_voil = get_post_meta($pllid,'palco_voil',true)?>
 
             <?php the_post_thumbnail(); // Fullsize image for the single post ?>
 			<!-- article -->
@@ -32,18 +34,19 @@
 <label for="tab2" class="lab-voil">Palco</label>
             <section class="tab-voil" id="content1">
             <?php //TODO contenido de la seccion de calle?>
-				<?php the_content(); ?>
+				<?php echo $calle_voil; ?>
             </section>
-            <section class="tab-voil" id="content2">aa
-				<?php the_content(); ?>
+            <section class="tab-voil" id="content2">
+				<?php echo $palco_voil; ?>
+				<?php //the_content(); ?>
             </section>
+</div>
 </div>
             <div class="art-info-voil">
-                    <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $dur_art_voil; ?></span>
-                    <span><?php echo $public_art_voil; ?></span>
-                    <span><?php echo $from_art_voil; ?></span>
+                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>   <?php echo $dur_art_voil; ?></span>
+                    <span><i class="fa fa-users" aria-hidden="true"></i>   <?php echo $public_art_voil; ?></span>
+                    <span><i class="fa fa-flag" aria-hidden="true"></i>   <?php echo $from_art_voil; ?></span>
             </div>
-</div>
                     <?php //echo get_post_meta(118,'duration_data',true)?>
 				<?php //comments_template( '', true ); // Remove if you don't want comments ?>
 

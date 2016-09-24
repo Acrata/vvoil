@@ -2,6 +2,7 @@
 /*
 Title: Info Show
 Post Type: page
+Context: side
  */
 
 

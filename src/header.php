@@ -42,12 +42,14 @@
 		<!-- wrapper -->
 		<div class="wrapper lide" id="wrapper">
 
+		<!-- fleche -->
                 <div class="fleche" id="trigger">
             <?php pll_the_languages();?>
                   <p class="trigger" >
                     Menu <span></span>
                   </p>
                 </div>
+		<!-- /fleche -->
 					<!-- nav -->
 					<nav class="nav menur" role="navigation">
 					<!-- logo -->
