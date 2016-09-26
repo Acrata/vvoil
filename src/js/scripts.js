@@ -6,7 +6,7 @@
 
 	$(function () {
 		// DOM ready, take it away
-$( "#trigger" ).click(function() {
+$( ".trigger" ).click(function() {
   $(".wrapper").toggleClass("is-open");
 });
 

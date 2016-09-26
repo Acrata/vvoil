@@ -25,8 +25,8 @@ label.lab-voil:before {
   margin-right: 10px;
 }
 
-label.lab-voil[for*='1']:before { content: '\f018'; }
-label.lab-voil[for*='2']:before { content: '\f19c'; }
+label.lab-voil[for*='1']:before { content: '\f19c'; }
+label.lab-voil[for*='2']:before { content: '\f018'; }
 label.lab-voil[for*='3']:before { content: '\f16b'; }
 label.lab-voil[for*='4']:before { content: '\f1a9'; }
 
@@ -49,9 +49,17 @@ label.lab-voil:hover {
   display: block;
 }
 
+
+@media screen and (min-width: 700px) {
+  label.lab-voil {
+     width:16vw;
+  }
+}
+
 @media screen and (max-width: 650px) {
   label.lab-voil {
     font-size: 0;
+     width:16vw;
   }
   label.lab-voil:before {
     margin: 0;
@@ -63,6 +71,11 @@ label.lab-voil:hover {
   label.lab-voil {
     padding: 15px;
   }
+}
+@media  (min-width:1200px) {
+  label.lab-voil {
+     width:12vw;
+}
 }
 .tlab-voil {
 min-width: 320px;

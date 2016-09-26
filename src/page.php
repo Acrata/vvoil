@@ -33,8 +33,8 @@
   <input class="inp-voil" id="tab2" type="radio" name="tabs">
 <label for="tab2" class="lab-voil">Palco</label>
             <section class="tab-voil" id="content1">
-            <?php //TODO contenido de la seccion de calle?>
 				<?php echo $calle_voil; ?>
+            <?php //TODO contenido de la seccion de calle?>
             </section>
             <section class="tab-voil" id="content2">
 				<?php echo $palco_voil; ?>
@@ -43,9 +43,10 @@
 </div>
 </div>
             <div class="art-info-voil">
-                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>   <?php echo $dur_art_voil; ?></span>
-                    <span><i class="fa fa-users" aria-hidden="true"></i>   <?php echo $public_art_voil; ?></span>
-                    <span><i class="fa fa-flag" aria-hidden="true"></i>   <?php echo $from_art_voil; ?></span>
+            <h3>Datos del show</h3>
+                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>Tiempo:   <?php echo $dur_art_voil; ?></span>
+                    <span><i class="fa fa-users" aria-hidden="true"></i>Publico:   <?php echo $public_art_voil; ?></span>
+                    <span><i class="fa fa-flag" aria-hidden="true"></i>Procedencia:   <?php echo $from_art_voil; ?></span>
             </div>
                     <?php //echo get_post_meta(118,'duration_data',true)?>
 				<?php //comments_template( '', true ); // Remove if you don't want comments ?>
