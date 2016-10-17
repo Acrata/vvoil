@@ -27,6 +27,11 @@
 @import "partials/print";
 
 
+@media  (min-width:700px) and (max-width:829px) {
+    .art-info-voil {
+         width:45%;
+    }
+}
 @media  (max-width:700px) {
     .titles-voil {
         lost-column:4/5;
@@ -136,8 +141,10 @@ ul li a {
   text-decoration: none;
   font-size: 1em;
 }
-
-h3, a, p {
+p{
+    color:#424242;
+}
+h3, a  {
   color: #FFF;
 }
 
@@ -206,7 +213,7 @@ h1, h2, h3 {
 
 .menu-item-has-children:hover {
     .sub-menu {
-       height: 130px;
+       height: auto;
       transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
        //transform:translateY(123px);
     }
@@ -270,14 +277,23 @@ body.pg-loaded > .wrapper {
 }
 .is-open  {
 }
-.is-open::after  {
+.page .is-open::after  {
     content:"";
     position:absolute;
     top:0px;
     left:0px;
     background-color:rgba(255, 85, 85, 0.5);
     height:100vh;
-    width:100vw;
+    width:99vw;
+}
+.home .is-open::after  {
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:rgba(255, 85, 85, 0.5);
+    height:100vh;
+    width:99vw;
 }
 
 .page h1 {
@@ -342,13 +358,14 @@ q, blockquote {
   /*position: absolute;*/
   /*width: 43vw !important;*/
   lost-column:4/8;
-  lost-move:4/8;
+  lost-move:3/8;
   border-left: 8px solid #5f5555;
   padding-top:8px !important;
   padding-left:4em !important;
 }
 .content-voil > *{
     padding-bottom:12px;
+    min-height:100%;
 }
 .content-voil p{
 float: right;
@@ -363,13 +380,13 @@ font-size: 1.4em !important;
  /*lost-move:1/4;*/
 }
 .content-voil {
-    width:33vw !important;
+    width:44vw !important;
 }
 .art-info-voil {
     lost-move:-2.5/8;
-    padding-top:12px;
+    width:50%;
     display:flex;
-    flex-flow:column;
+    flex-flow:row;
     top:0;
      order:0;
 }
@@ -378,7 +395,7 @@ font-size: 1.4em !important;
 main[role="main"] {
 }
 article {
-  lost-aign:right;
+ /* lost-aign:right;*/
   height:auto;
 }
 
@@ -409,7 +426,6 @@ article {
 }
 
 .art-info-voil {
-     padding-top:2em;
      order:-1;
      float:right;
 }
@@ -532,4 +548,29 @@ ul.lang-menu li a{
 
 .entry p {
      color:#424242;
+}
+
+.art-info-voil > * {
+    margin:5px;
+    font-size:12px;
+}
+.art-info-voil span {
+    color:#ff5555;
+}
+
+.artist-entry-list {
+    width:85%;
+    margin:auto;
+    display:flex;
+    padding:3em 0px;
+}
+.artist-entry {
+
+}
+.artist-entry img {
+    float:left;
+    padding:12px;
+}
+.title-voil-entry , .view-article {
+    color:#ff5555;
 }

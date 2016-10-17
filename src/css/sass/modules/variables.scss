@@ -7,8 +7,10 @@
 /**
  * Typography
  */
-
-$font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+//-- typo:start --//
+$font-family-base: 'Raleway', sans-serif; //300 italic, 400, 600
+$font-family-open: 'Open Sans', sans-serif ; //300 italic, 400
+//-- typo:end --//
 $font-size-base: 140%;
 $line-height-base: 1.5;
 
@@ -16,10 +18,11 @@ $line-height-base: 1.5;
 /**
  * Colors
  */
-
+//-- colors:start --//
 $text-color: #444;
 $body-bg: #fff;
-$selection-bg: #04A4CC;
+$selection-bg: #ff5555;
+//-- colors:end --//
 
 
 /**

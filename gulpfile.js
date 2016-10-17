@@ -4,8 +4,11 @@
 
 var postcss = require( "gulp-postcss" );
 var lost = require( "lost" );
+var styleguide = require('devbridge-styleguide');
 var autoprefixer = require( "autoprefixer" );
 var sass = require( "gulp-sass" );
+var gutil = require( 'gulp-util' );
+var ftp = require( 'vinyl-ftp' );
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
 	$ = require( "gulp-load-plugins" )(),
@@ -137,6 +140,71 @@ gulp.task( "uglify", function() {
 gulp.task( "envProduction", function() {
 	env = "production";
 });
+
+/** living styleguide*/
+
+gulp.task('start-styleguide', function () {
+  styleguide.startServer();
+});
+
+/** FTP*/
+/** Configuration **/
+var user = "u781390109.gulp";
+var password = "voilarts2016";
+var host = "31.220.16.42";
+var port = 21;
+var localFilesGlob = ['./dist/404.php'];
+var remoteFolder = '/home/u781390109/public_html/wp-content/themes/dist'
+// helper function to build an FTP connection based on our configuration
+function getFtpConnection() {
+    return ftp.create({
+        host: host,
+        port: port,
+        user: user,
+        password: password,
+        parallel: 5,
+        log: gutil.log
+    });
+}
+
+/**
+ * Deploy task.
+ * Copies the new files to the server
+ *
+ * Usage: `FTP_USER=someuser FTP_PWD=somepwd gulp ftp-deploy`
+ */
+gulp.task('ftp-deploy', function() {
+
+    var conn = getFtpConnection();
+
+    return gulp.src(localFilesGlob, { base: '.', buffer: false })
+        .pipe( conn.newer( remoteFolder ) ) // only upload newer files
+        .pipe( conn.dest( remoteFolder ) )
+    ;
+});
+
+/**
+ * Watch deploy task.
+ * Watches the local copy for changes and copies the new files to the server whenever an update is detected
+ *
+ * Usage: `FTP_USER=someuser FTP_PWD=somepwd gulp ftp-deploy-watch`
+ */
+gulp.task('ftp-deploy-watch', function() {
+
+    var conn = getFtpConnection();
+
+    gulp.watch(localFilesGlob)
+    .on('change', function(event) {
+      console.log('Changes detected! Uploading file "' + event.path + '", ' + event.type);
+
+      return gulp.src( [event.path], { base: '.', buffer: false } )
+        .pipe( conn.newer( remoteFolder ) ) // only upload newer files
+        .pipe( conn.dest( remoteFolder ) )
+      ;
+    });
+});
+
+
 
 /** Livereload */
 gulp.task( "watch", [ "template", "styles", "jshint" ], function() {

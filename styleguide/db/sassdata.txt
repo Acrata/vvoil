@@ -1,0 +1,50 @@
+[
+  {
+    "name": "theme",
+    "colors": {
+      "#444": [
+        "$text-color"
+      ],
+      "#ff5555": [
+        "$selection-bg"
+      ],
+      "#fff": [
+        "$body-bg"
+      ]
+    },
+    "typography": [
+      {
+        "variable": "$font-family-base",
+        "value": "'Raleway', sans-serif",
+        "weights": [
+          {
+            "weight": 300,
+            "italic": true
+          },
+          {
+            "weight": 400,
+            "italic": false
+          },
+          {
+            "weight": 600,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "variable": "$font-family-open",
+        "value": "'Open Sans', sans-serif",
+        "weights": [
+          {
+            "weight": 300,
+            "italic": true
+          },
+          {
+            "weight": 400,
+            "italic": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 3,
+    "name": "title",
+    "code": "",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": false,
+    "isDeleted": false
+  },
+  {
+    "id": 2,
+    "name": "title",
+    "code": "<div class=\"titles-voil>\n                <h1 class=\"title-voil\">DARWIN PIMENTEL</h1>\n                <p>\n                    <span class=\"show-title-voil\">El Homme aux souvenirs</span>\n                </p>\n            </div>",
+    "description": "",
+    "inlineCss": "#snippet { \n  h1.title-voil {\n\tcolor:#f55;\n\ttext-align:left\n}\n.titles-voil span {\n\tcolor:#f55!important;\n\tfont-style:italic;\n\tfont-family:'Raleway',sans-serif;\n\tfont-weight:300;\n\tfont-size:1.5em\n}\n\n}\n",
+    "includeJs": "true",
+    "isEdited": true,
+    "isDeleted": false
+  }
+]
