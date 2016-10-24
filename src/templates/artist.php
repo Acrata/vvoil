@@ -1,8 +1,11 @@
 <?php get_header(); ?>
 	<main role="main">
 		<!-- section -->
-		<section>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+            <div class="feat-img">
+                <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+            </div>
+		<section>
             <?php $pllid =  pll_get_post($post->ID)?>
             <?php $invo = get_post_meta($pllid,'show_title_voil',true)?>
             <?php $dur_art_voil = get_post_meta($pllid,'duration_data_voil',true)?>
@@ -11,34 +14,51 @@
             <?php $calle_voil = get_post_meta($pllid,'calle_voil',true)?>
             <?php $palco_voil = get_post_meta($pllid,'palco_voil',true)?>
 
-            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<!-- article -->
             <?php //$id = get_the_ID();?>
             <div class="titles-voil">
-                <h1 class="title-voil"><?php the_title(); ?></h1>
+                <h1 class="title-voil"><?php echo get_the_title($post->post_parent); ?></h1>
                 <p>
                     <span class="show-title-voil"><?php echo $invo; ?></span>
                 </p>
             </div>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <p><?php //echo get_post_meta(118, 'show_titlea', true);?></p>
-            <p><?php //echo get_post_meta(124, 'show_titlea', true);?></p>
 
-            <div class="art-info-voil">
-            <h3><?php pll_e("Data show");?>:</h3>
-                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>  <?php pll_e("Timed");?>:   <?php echo $dur_art_voil; ?>|</span>
-                    <span><i class="fa fa-users" aria-hidden="true"></i> Publico:  <?php echo $public_art_voil; ?>|</span>
-                    <span><i class="fa fa-flag" aria-hidden="true"></i> Procedencia:  <?php echo $from_art_voil; ?></span>
-                    <span><i class="fa fa-flag" aria-hidden="true"></i> Procedencia:  <?php echo $from_art_voil; ?></span>
-            </div>
 <div class="content-voil">
-ooo
-    <?php include(locate_template('templates/content-palcotabs.php', false, false));?>
+				<?php //the_content(); ?>
+<?php
+
+$args = array(
+    'post_type'      => 'artist',
+    'posts_per_page' => -1,
+    'post_parent'    => $post->ID,
+    'order'          => 'ASC',
+    'orderby'        => 'menu_order'
+ );
+
+
+$parent = new WP_Query( $args );
+
+if ( $parent->have_posts() ) : ?>
+    <div class="scenario-list">
+    <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
+
+        <div id="parent-<?php the_ID(); ?>" class="parent-page asd">
+            <div class="back-decoration"></div>
+            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+			<!-- article -->
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h1><?php the_title(); ?></h1></a>
+            <?php //the_excerpt(); ?>
+
+        </div>
+
+    <?php endwhile; ?>
+
+<?php endif; wp_reset_query(); ?>
 </div>
                     <?php //echo get_post_meta(118,'duration_data',true)?>
 				<?php //comments_template( '', true ); // Remove if you don't want comments ?>
 
-				<br class="clear">
 
 				<?php edit_post_link(); ?>
 

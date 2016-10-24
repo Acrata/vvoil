@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<h5>Dar</h5>
 	<main role="main">
 		<!-- section -->
 		<section>
@@ -29,10 +30,9 @@
                     <span><i class="fa fa-clock-o" aria-hidden="true"></i>  <?php pll_e("Timed");?>:   <?php echo $dur_art_voil; ?>|</span>
                     <span><i class="fa fa-users" aria-hidden="true"></i> Publico:  <?php echo $public_art_voil; ?>|</span>
                     <span><i class="fa fa-flag" aria-hidden="true"></i> Procedencia:  <?php echo $from_art_voil; ?></span>
-                    <span><i class="fa fa-flag" aria-hidden="true"></i> Procedencia:  <?php echo $from_art_voil; ?></span>
             </div>
 <div class="content-voil">
-ooo
+fef
     <?php include(locate_template('templates/content-palcotabs.php', false, false));?>
 </div>
                     <?php //echo get_post_meta(118,'duration_data',true)?>

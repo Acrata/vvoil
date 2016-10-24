@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 	<main role="main">
+<h4>Edagr custom template</h4>
 		<!-- section -->
+            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
 		<section>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
             <?php $pllid =  pll_get_post($post->ID)?>
@@ -11,7 +13,6 @@
             <?php $calle_voil = get_post_meta($pllid,'calle_voil',true)?>
             <?php $palco_voil = get_post_meta($pllid,'palco_voil',true)?>
 
-            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
 			<!-- article -->
             <?php //$id = get_the_ID();?>
             <div class="titles-voil">
@@ -21,19 +22,8 @@
                 </p>
             </div>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <p><?php //echo get_post_meta(118, 'show_titlea', true);?></p>
-            <p><?php //echo get_post_meta(124, 'show_titlea', true);?></p>
 
-            <div class="art-info-voil">
-            <h3><?php pll_e("Data show");?>:</h3>
-                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>  <?php pll_e("Timed");?>:   <?php echo $dur_art_voil; ?>|</span>
-                    <span><i class="fa fa-users" aria-hidden="true"></i> Publico:  <?php echo $public_art_voil; ?>|</span>
-                    <span><i class="fa fa-flag" aria-hidden="true"></i> Procedencia:  <?php echo $from_art_voil; ?></span>
-                    <span><i class="fa fa-flag" aria-hidden="true"></i> Procedencia:  <?php echo $from_art_voil; ?></span>
-            </div>
 <div class="content-voil">
-ooo
-    <?php include(locate_template('templates/content-palcotabs.php', false, false));?>
 </div>
                     <?php //echo get_post_meta(118,'duration_data',true)?>
 				<?php //comments_template( '', true ); // Remove if you don't want comments ?>

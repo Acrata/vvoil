@@ -69,6 +69,7 @@ gulp.task( "copy", function() {
 			"src/*.{php,png,css}",
 			"src/modules/*.php",
 			"src/piklist/**/*.php",
+			"src/templates/**/*.php",
 			"src/img/**/*.{jpg,png,svg,gif,webp,ico}",
 			"src/fonts/*.{woff,woff2,ttf,otf,eot,svg}",
 			"src/languages/*.{po,mo,pot}"

@@ -1,7 +1,7 @@
 
 <?php
 /*
-Title: Palco t
+Title: Calle
 Post Type: page , artist
 Flow:Calle y Palco
 Tab: Calle
@@ -9,7 +9,7 @@ Tab: Calle
 
 piklist('field', array(
     'type' => 'editor'
-    ,'field' => 'palco_voil'
+    ,'field' => 'calle_voil'
     ,'options' => array (
       'wpautop' => true
       ,'media_buttons' => true

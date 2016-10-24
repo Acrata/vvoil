@@ -1,25 +1,35 @@
 
 <?php
 /*
-Title: Calle t
-Post Type: page
+Title: Relate
+Post Type: page, artist
 Flow:Calle y Palco
 Tab: Calle
  */
-
-piklist('field', array(
-    'type' => 'editor'
-    ,'field' => 'calle_voil'
-    ,'options' => array (
-      'wpautop' => true
-      ,'media_buttons' => true
-      ,'tabindex' => ''
-      ,'editor_css' => ''
-      ,'editor_class' => ''
-      ,'teeny' => false
-      ,'dfw' => false
-      ,'tinymce' => true
-      ,'quicktags' => true
+piklist(
+    'field',
+    array(
+        'type' => 'select',
+        'scope' => 'post_meta',
+        'field' => 'your field name',
+        'label' => __('your label'),
+        'description' => __('your desc'),
+        'attributes' => array(
+            'class' => 'css class',
+            'multiple' => 'multiple'
+        ),
+        'choices' => piklist(
+            get_posts(
+                array(
+                    'post_type' => 'artist',
+                    'hide_empty' => false
+                )
+            ),
+            array(
+                'ID',
+                'post_title'
+            )
+        )
     )
-  ));
+);
 ?>

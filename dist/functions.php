@@ -629,3 +629,95 @@ pll_register_string("Calle", "Calle");
 pll_register_string("Palco", "Palco");
 pll_register_string("Data show", "Data show","Data-show",true);
 pll_register_string("Time", "Timed","Data-show");
+pll_register_string("Space", "Space","Data-show");
+pll_register_string("Public", "Public","Data-show");
+pll_register_string("Origin", "Origin","Data-show");
+
+add_filter('piklist_taxonomies', 'artist_type_tax');
+  /* public artist_type_tax($taxonomies) {{{ */
+  /**
+   * artist_type_tax
+   *
+   * @param mixed $taxonomies
+   * @access public
+   * @return void
+   */
+  function artist_type_tax($taxonomies) {
+     $taxonomies[] = array(
+        'post_type' => 'artist'
+        ,'name' => 'Artista'
+        ,'show_admin_column' => true
+        ,'configuration' => array(
+          'hierarchical' => true
+          ,'labels' => piklist('taxonomy_labels', 'Scenario')
+          ,'hide_meta_box' => false
+          ,'show_ui' => true
+          ,'query_var' => true
+          ,'rewrite' => array(
+            'slug' => 'scenario-type'
+          )
+        )
+      );
+    return $taxonomies;
+}
+/* }}} */
+
+/**
+ *  Get paginas child
+ */
+function wpb_list_child_pages() {
+
+global $post;
+
+if ( is_page() && $post->post_parent )
+
+	$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+else
+	$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $pllid . '&echo=0' );
+
+if ( $childpages ) {
+
+	$string = '<ul>' . $childpages . '</ul>';
+}
+
+return $string;
+
+}
+
+add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+
+//add_action( 'add_meta_boxes', 'add_custom_page_attributes_meta_box' );
+/* public add_custom_page_attributes_meta_box() {{{ */
+/** Add custom template selector like in pages for custom post types
+ * add_custom_page_attributes_meta_box
+ * https://themeforest.net/forums/thread/custom-post-type-selecting-the-template/36782
+ *
+ * @access public
+ * @return void
+ */
+function add_custom_page_attributes_meta_box(){
+    global $post;
+    if ( 'page' != $post->post_type && post_type_supports($post->post_type, 'page-attributes') ) {
+        add_meta_box( 'custompageparentdiv', __('Template'), 'custom_page_attributes_meta_box', NULL, 'side', 'core');
+    }
+}
+/* }}} */
+
+function custom_page_attributes_meta_box($post) {
+    $template = get_post_meta( $post->ID, '_wp_page_template', 1 ); ?>
+    <select name="page_template" id="page_template">
+        <?php $default_title = apply_filters( 'default_page_template_title',  __( 'Default Template' ), 'meta-box' ); ?>
+        <option value="default"><?php echo esc_html( $default_title ); ?></option>
+        <?php page_template_dropdown($template); ?>
+    </select><?php
+}
+
+add_action( 'save_post', 'save_custom_page_attributes_meta_box' );
+function save_custom_page_attributes_meta_box( $post_id ) {
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) return;
+    if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+    if ( ! empty( $_POST['page_template'] ) && get_post_type( $post_id ) != 'page' ) {
+        update_post_meta( $post_id, '_wp_page_template', $_POST['page_template'] );
+    }
+}

@@ -2,7 +2,7 @@
 <?php
 /*
 Title: Palco t
-Post Type: page
+Post Type: page , artist
 Flow:Calle y Palco
 Tab: Calle
  */
