@@ -5,7 +5,7 @@
             <div class="feat-img">
                 <?php the_post_thumbnail(); // Fullsize image for the single post ?>
             </div>
-		<section>
+		<section data-intro="Hola, aca te dejo como quedara">
             <?php $pllid =  pll_get_post($post->ID)?>
             <?php $invo = get_post_meta($pllid,'show_title_voil',true)?>
             <?php $dur_art_voil = get_post_meta($pllid,'duration_data_voil',true)?>
@@ -44,10 +44,12 @@ if ( $parent->have_posts() ) : ?>
     <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
         <div id="parent-<?php the_ID(); ?>" class="parent-page asd">
-            <div class="back-decoration"></div>
             <?php the_post_thumbnail(); // Fullsize image for the single post ?>
 			<!-- article -->
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h1><?php the_title(); ?></h1></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <h1><?php the_title(); ?></h1>
+            <div class="back-decoration"></div>
+            </a>
             <?php //the_excerpt(); ?>
 
         </div>

@@ -1,5 +1,5 @@
     /*global
-    TweenMax, TweenLite , Power2
+    TweenMax, TweenLite , Power2, introJs
     */
 (function( root, $, undefined ) {
 	"use strict";
@@ -14,6 +14,8 @@ $( ".trigger" ).click(function() {
 $(window).load(function(){
     TweenMax.from("img.attachment-post-thumbnail,.art-info-voil, .titles-voil", 1, {opacity:0, top:"50px", ease:Power2.easeInOut});
     TweenLite.from("p,.tlab-voil", 0.5, {css:{transform:"translateX(50px)"},delay:0.3});
+    introJs().start();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
 });
 //DOM ready
 	});

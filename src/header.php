@@ -13,9 +13,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400|Raleway:300i,400,600" rel="stylesheet">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.3.0/introjs.min.css" rel="stylesheet">
 <!--CDN link for  TweenMax-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script src="https://use.fontawesome.com/015185764a.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.3.0/intro.js"></script>
 
 
 		<?php wp_head(); ?>
