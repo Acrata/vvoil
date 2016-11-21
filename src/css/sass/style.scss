@@ -139,7 +139,7 @@ ul li {
 }
 ul li a {
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.4em;
 }
 p{
     color:#424242;
@@ -203,20 +203,36 @@ h1, h2, h3 {
      }
 }
 
-    .sub-menu {
-       //transform:translateY(-123px);
+.menu-item-has-children  > .sub-menu{
+    padding:0 12px;
+        display:block;
+        transform:translateX(-200%);
+        height:0;
+        opacity:0;
        overflow: hidden;
-       height: 0px;
-      transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
+      transition: all 0.5s cubic-bezier(0.52, 0.55, 0.55, 1);
 
     }
 
-.menu-item-has-children:hover {
+ .menu-item-has-children:hover {
     .sub-menu {
-      min-height: 23px;
-      transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
-       //transform:translateY(123px);
+        height:auto;
+        opacity:1;
+       transform:translateX(0%);
+      transition: all 0.5s cubic-bezier(0.52, 0.55, 0.55, 1);
+      li .sub-menu {
+        transform:translateX(-200%);
+        height:0;
+      transition: all 0.5s cubic-bezier(0.52, 0.55, 0.55, 1);
+      }
+     .menu-item-has-children:hover {
+         .sub-menu {
+        height:auto;
+        transform:translateX(0%);
+      transition: all 0.5s cubic-bezier(0.52, 0.55, 0.55, 1);
+         }
     }
+}
 }
 
 body > .wrapper {
@@ -348,8 +364,19 @@ q, blockquote {
 }
 
 @media  (min-width:1200px) {
+
+    main {
+        lost-utility:clearfix;
+    }
+    section {
+        min-height:500px;
+    }
+    .mask {
+         background:yellow;
+         height:100%;
+    }
     .single-artist main {
-         margin:2em;
+        padding:2em;
     }
 .single-artist  .feat-img {
      lost-column:2/4;
@@ -587,16 +614,7 @@ ul.lang-menu li a{
      display:flex;
 }
 
-.entry {
-    width:66%;
-    margin:auto;
-    margin-top:40px;
-    display:flex;
-    padding:20px;
-    img {
-        padding-right:20px;
-    }
-}
+
 
 .entry p {
      color:#424242;
@@ -609,20 +627,44 @@ ul.lang-menu li a{
 .art-info-voil span {
     color:#ff5555;
 }
-
-.artist-entry-list {
-    width:85%;
+.home {
+    main {
+        padding-bottom:2em;
+    }
+    .title-artist {
+        lost-row:2/2;
+        background-color:#ff5555;
+        h1 {
+        color:#fff;
+        padding:12px;
+        }
+    }
+ .about-index , .artist-index, .title-artist h1 {
+    width:80%;
     margin:auto;
-    display:flex;
-    padding:3em 0px;
 }
-.artist-entry {
+    .artist-list-vv {
+        lost-column:4/12 3;
+    }
+        .res-img {
+            text-align:center;
+        }
+    .artist-item {
+        padding-top: 2em;
+        h1 {
+            padding-top:1em;
+        }
+    }
 
+    .about-index {
+    padding:2em 0px;
+    }
+    .about-item .title-voil-entry {
+         padding: 2em 0 0 0;
+    }
 }
-.artist-entry img {
-    float:left;
-    padding:12px;
-}
+
+
 .title-voil-entry , .view-article {
     color:#ff5555;
 }
@@ -651,3 +693,57 @@ transition:background-color 300ms ease ;
 }
 }
 
+.post-type-archive-artist {
+    section {
+        width:80%;
+        margin:auto;
+        padding:2em 0;
+        lost-utility:clearfix;
+    }
+    article {
+        lost-column:4/12 3;
+    }
+    .title-artist {
+        lost-row:2/2;
+        background-color:#ff5555;
+        h1 {
+        color:#fff;
+        padding:12px;
+        width:80%;
+        margin:auto;
+        }
+}
+        .res-img {
+            text-align:center;
+        }
+    .artist-item {
+        padding-top: 2em;
+         a{
+            color:#ff5555;
+        }
+
+}
+}
+    ul.artist-childs {
+        display:flex;
+        padding:0;
+        justify-content:center;
+        li {
+            margin-right:12px;
+            width:30%;
+            background-color:#FF5555;
+            text-align: center;
+            a{
+                color:#FFF;
+                text-transform: capitalize;
+                &:hover {
+                    text-decoration:none;
+                }
+            }
+        }
+    }
+    h3.shows-voil {
+        color:#424242;
+        border-top:2px solid #ff5555;
+        padding-top:12px;
+    }

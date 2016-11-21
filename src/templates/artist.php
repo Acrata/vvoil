@@ -4,6 +4,7 @@
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
             <div class="feat-img">
                 <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+<div class="mask"></div>
             </div>
 		<section data-intro="Hola, aca te dejo como quedara">
             <?php $pllid =  pll_get_post($post->ID)?>

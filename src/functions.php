@@ -30,8 +30,8 @@ if (function_exists('add_theme_support'))
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-    add_image_size('content', '300', 1200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('custom-size', 300, 250, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('index-artist', 700, 450, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
@@ -646,7 +646,7 @@ add_filter('piklist_taxonomies', 'artist_type_tax');
      $taxonomies[] = array(
         'post_type' => 'artist'
         ,'name' => 'Artista'
-        ,'show_admin_column' => true
+,'show_admin_column' => true
         ,'configuration' => array(
           'hierarchical' => true
           ,'labels' => piklist('taxonomy_labels', 'Scenario')
@@ -720,4 +720,19 @@ function save_custom_page_attributes_meta_box( $post_id ) {
     if ( ! empty( $_POST['page_template'] ) && get_post_type( $post_id ) != 'page' ) {
         update_post_meta( $post_id, '_wp_page_template', $_POST['page_template'] );
     }
+}
+add_action( 'pre_get_posts','hide_children' );
+
+function hide_children( $query )
+{
+    remove_action( 'pre_get_posts', current_filter() );
+
+    if ( is_admin() or ! $query->is_main_query() )
+        return;
+
+    if ( ! $query->is_post_type_archive( 'artist' ) )
+        return;
+
+    // only top level posts
+    $query->set( 'post_parent', 0 );
 }
