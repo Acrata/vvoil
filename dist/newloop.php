@@ -31,7 +31,6 @@ $do_not_duplicate = $post->ID;?>
         <div class="about-item">
             <h1 class="title-voil-entry"><?php the_title();?></h1>
             <?php the_content(); ?>
-            <p><?php the_excerpt(); ?></p>
         </div>
     </div>
 
@@ -45,6 +44,8 @@ while ($my_query->have_posts()) : $my_query->the_post();
 $do_not_duplicate = $post->ID;
 $attachment_id = get_post_thumbnail_id($post->ID);
 ?>
+            <?php $pllid =  pll_get_post($post->ID)?>
+            <?php $invo = get_post_meta($pllid,'show_title_voil',true)?>
 
 
 
@@ -56,6 +57,9 @@ $attachment_id = get_post_thumbnail_id($post->ID);
 </div>
         <div class="artist-item">
             <h1 class="title-voil"><?php the_title();?></h1>
+                <p>
+                    <span class="show-title-voil"><?php echo $invo; ?></span>
+                </p>
             <p><?php the_excerpt(); ?></p>
             <h3 class="shows-voil">Shows</h3>
             <ul class="artist-childs">
@@ -69,4 +73,6 @@ $attachment_id = get_post_thumbnail_id($post->ID);
     </div>
 
  <?php endwhile; ?>
+
 </div>
+

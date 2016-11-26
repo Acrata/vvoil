@@ -14,6 +14,9 @@
 		</section>
 		<!-- /section -->
 	</main>
+<div class="all-artist-link">
+<a href="<?php echo get_post_type_archive_link( 'artist' ); ?>">Todos los Artistas</a>
+</div>
 
 <?php get_sidebar(); ?>
 

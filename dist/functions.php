@@ -494,7 +494,7 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     Customizer Functions
 \*------------------------------------*/
 
-add_action('customize_register','my_customize_register');
+//add_action('customize_register','my_customize_register');
 function my_customize_register( $wp_customize ) {
   $wp_customize->add_panel();
   $wp_customize->get_panel();
