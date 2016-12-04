@@ -1,12 +1,11 @@
+
+<div class="artist-index">
+		<!-- post thumbnail -->
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 <?php
 $attachment_id = get_post_thumbnail_id($post->ID);
 ?>
 	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-<div class="artist-index">
-		<!-- post thumbnail -->
     <div class="artist-list-vv">
 <div class="res-img">
    <img src="<?php echo wp_get_attachment_image_url( $attachment_id, 'index-artist' ) ?>"
@@ -43,14 +42,12 @@ $attachment_id = get_post_thumbnail_id($post->ID);
 ) ); ?>
 </ul>
         </div>
-        </div>
 		<?php edit_post_link(); ?>
 
-	</article>
-	<!-- /article -->
 
 <?php endwhile; ?>
 
+        </div>
 <?php else: ?>
 
 	<!-- article -->
